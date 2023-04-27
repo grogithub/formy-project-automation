@@ -18,7 +18,6 @@ public class DragAndDrop {
 
         driver.get("https://formy-project.herokuapp.com/dragdrop");
 
-
         WebElement image = driver.findElement((By.id("image")));
         WebElement box = driver.findElement((By.id("box")));
 

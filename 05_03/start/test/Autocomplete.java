@@ -37,7 +37,7 @@ public class Autocomplete {
        time per session. To set the timeout for calls to
        execute_async_script, see set_script_timeout. */
 
-        // Using the following you will never have element not found or clickable error
+        // Since the element below is found, the execution happens quickly
         //WebElement fielduploadField = driver.findElement((By.id("file-upload-field")));
         WebDriverWait wait = new WebDriverWait(driver,10);
         WebElement fielduploadField =
@@ -46,8 +46,14 @@ public class Autocomplete {
         fielduploadField.sendKeys("file-to-upload.png");
         // Thread.sleep(2000);
         // Following code will actually demonstrate the capability of the explicit wait
+        // here it waits explicitly for 10 secs max, and does a check every 500ms, for the element
+        // if found, it proceeds ahead.
+        // Line 55 has the right selector which if used, the execution finishes quickly
         WebElement fielduploadField1 =
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("file-upload-field1")));
+        // WebElement fielduploadField1 =
+                // wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("file-upload-field1")));
+
 
         driver.quit();
     }

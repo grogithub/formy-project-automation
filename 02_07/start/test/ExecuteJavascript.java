@@ -16,8 +16,6 @@ public class ExecuteJavascript {
 
         driver.get("https://formy-project.herokuapp.com/modal");
 
-
-
         WebElement modalButton = driver.findElement((By.id("modal-button")));
         modalButton.click();
 

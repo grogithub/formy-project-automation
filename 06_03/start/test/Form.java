@@ -45,7 +45,9 @@ public class Form {
 
     public static void waitForAlertBanner(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        /* WebElement alert = */wait.until((ExpectedConditions.visibilityOfElementLocated(By.className("alert"))));
+        /* WebElement alert = */
+        wait.until((ExpectedConditions.visibilityOfElementLocated(By.className("alert"))));
+
     }
 
     public static String getAlertBannerText(WebDriver driver) {

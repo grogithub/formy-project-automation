@@ -23,6 +23,7 @@ public class Autocomplete {
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://formy-project.herokuapp.com/fileupload");
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         // The following failed to wait, since its purpose is not the same as thread.sleep
@@ -36,13 +37,15 @@ public class Autocomplete {
        time per session. To set the timeout for calls to
        execute_async_script, see set_script_timeout. */
 
-        // Using the following you will never have element not found or clickable error
         WebElement fielduploadField = driver.findElement((By.id("file-upload-field")));
         //fielduploadField.click();
         fielduploadField.sendKeys("file-to-upload.png");
         // Thread.sleep(2000);
-    // following code will show the capability of implicit wait
-        WebElement fielduploadField1 = driver.findElement((By.id("file-upload-field1")));
+        // following code will show the capability of implicit wait, since the element below
+        // has an incorrect selector, & hence execution waits for 5 secs to check if that helps
+        // The code on linke 49 has the right selector which eventully has the app working
+        WebElement resetButton = driver.findElement((By.cssSelector(".btn.btn-warning.btn-reset1")));
+        // WebElement resetButton = driver.findElement((By.cssSelector(".btn.btn-warning.btn-reset")));
 
 
         driver.quit();

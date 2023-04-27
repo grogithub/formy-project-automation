@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import java.time.Clock;
 import java.util.List;
 
+// This use case was done since the original failed owing to no support from AutoComplete APIs
+// for the web site recommended in the course
 public class Autocomplete {
     public static void main(String[] args) throws InterruptedException {
 
@@ -24,30 +26,18 @@ public class Autocomplete {
        // driver.get("https://formy-project.herokuapp.com/autocomplete");
           driver.get("http://www.google.com");
 
-
-        //WebElement autocomplete = driver.findElement(By.id("autocomplete"));
-        //autocomplete.click();
-        //autocomplete.sendKeys("1555 Park Blvd, Palo Alto, CA");
-        //autocomplete.sendKeys("Lokmanya Tilak Road");
-
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
         element.click();
-        Thread.sleep(1000);
 
         // Enter something to search for
         element.sendKeys("Selenium");
 
-        Thread.sleep(2000);
+        // Thread.sleep(2000);
         //li[@class='sbct']
         List<WebElement> autodropDownList = element.findElements(By.xpath("//li[@class='sbct']"));
 
-        //Thread.sleep(1000);
-
-        //WebElement autocompleteResult = driver.findElement(By.className("pac-container"));
-        //autocompleteResult.click();
-
-        Thread.sleep(2000);
+        // Thread.sleep(2000);
 
         for (int i=0; i <  autodropDownList.size(); i++)
         {

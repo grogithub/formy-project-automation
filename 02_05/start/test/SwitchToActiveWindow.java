@@ -23,7 +23,9 @@ public class SwitchToActiveWindow {
         String originalHandle = driver.getWindowHandle();
 
         for (String handle: driver.getWindowHandles()) {
+            System.out.println(handle);
             driver.switchTo().window(handle);
+            //break;
         }
 
         Thread.sleep(2000);

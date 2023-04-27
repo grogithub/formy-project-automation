@@ -6,7 +6,8 @@ import org.openqa.selenium.By;
 public class TestSample  {
     public static void main(String[] args) {
 
-        // Set the property for webdriver.chrome.driver to be the location to your local              download of chromedriver
+        // Set the property for webdriver.chrome.driver to be the location to your
+        // local download of chromedriver
         //System.setProperty("webdriver.chrome.driver", "/Users/meaghanlewis/Downloads/chromedriver");
         System.setProperty("webdriver.chrome.driver",
         "D:\\work_dsi\\3dexp\\3dexp\\Linkedin Learning" +
@@ -22,6 +23,8 @@ public class TestSample  {
 
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
+                //.sendKeys()
+                //.submit();
 
         // Enter something to search for
         element.sendKeys("Cheese!");
